@@ -9,7 +9,7 @@
 | 属性 | 值 |
 |------|-----|
 | **项目名称** | UnitySkills |
-| **版本** | 1.5.4 |
+| **版本** | 1.5.5 |
 | **技术栈** | C# (Unity Editor) + Python (Client) |
 | **Unity 版本** | 2021.3+ (已验证 Unity 6 / 6000.2.x) |
 | **协议** | MIT |
@@ -476,7 +476,7 @@ public static class MyCustomSkills
 
 ```bash
 # 检查所有版本号是否一致
-grep -rn "1.3.1" --include="*.cs" --include="*.json" --include="*.md" | grep -E "version|版本"
+grep -rn "1.5.5" --include="*.cs" --include="*.json" --include="*.md" | grep -E "version|版本"
 ```
 
 ---

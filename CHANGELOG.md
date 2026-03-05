@@ -2,10 +2,16 @@
 
 All notable changes to **UnitySkills** will be documented in this file.
 
-## [Unreleased]
+## [1.5.5] - 2026-03-05
 
 ### Changed
-- **API Consistency Upgrade**: Standardized parameter naming across `PrefabSkills`, `EditorSkills`, `EventSkills`, and `CameraSkills` for methods operating on single GameObjects. Replaced inconsistent names like `gameObjectName` and `objectName` with the standard signature `string name = null, int instanceId = 0, string path = null` to prevent AI hallucinations and parameter mismatch errors during tool execution.
+- **API Standardized**: Unified GameObject parameters to `name`, `instanceId`, and `path` across all core modules including `Prefab`, `Editor`, `Event`, `Camera`, `Timeline`, `UI`, `Component`, and `Cinemachine`. Standardized inconsistent names like `gameObjectName`, `objectName`, `directorObjectName`, and `parentName` to prevent AI hallucinations and parameter mismatch errors.
+- **Enhanced Routing**: Added support for `instanceId` and `path` selection to multiple previously restricted skills (e.g., `timeline_play`, `component_copy`, `prefab_unpack`), enabling precise targeting in complex scenes.
+- **Component Copy Upgrade**: `component_copy` now supports comprehensive routing via `sourceName/sourceInstanceId/sourcePath` and `targetName/targetInstanceId/targetPath`.
+- **Doc Alignment**: Updated all `SKILL.md` manifest files and `SETUP_GUIDE.md` to reflect unified parameter naming conventions.
+
+### Fixed
+- **CS1737 Compiler Error**: Resolved "Optional parameters must appear after all required parameters" by ensuring all trailing parameters in modified skill signatures have appropriate default values (`null` or `0`). This makes the API more robust and AI-friendly.
 
 ## [1.5.4] - 2026-03-03
 
